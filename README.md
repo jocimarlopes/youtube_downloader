@@ -10,7 +10,7 @@ Currently we just need the Youtube Video Links (how many do you want).
 
 - Go inside the project folder
 - At the command prompt you type **`pip3 install -r requirements.txt`**
-- Now we just open the archive **`bot.py`** with a code editor (nodepad, nano, vscode, vim) and add the links in Array called **list_musics** and save the code.
+- Now we just open the archive **`bot.py`** with a code editor (nodepad, nano, vscode, vim) and add the Youtube Links inside the Array called **list_musics[]** and save the code.
 - After the installation and configuration is finished, just run in command prompt **`python bot.py`** and download movies.
 
 ## Important
@@ -19,5 +19,3 @@ Currently we just need the Youtube Video Links (how many do you want).
 ## Credits
 Version 1.0
 Created by [Jocimar Lopes](https://instagram.com/jocimarlopes)
-
-```
