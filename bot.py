@@ -1,4 +1,5 @@
 """ 
+TUTORIAL EM PORTUGUÊS
 - Instalar Bibliotecas para rodar:
    >pip3 install pytube
    >pip3 install moviepy
@@ -14,37 +15,39 @@ from moviepy.editor import *
 
 def mp3_downloader():
 
-    lista_musicas = [
-        'SEU_LINK_1_DO_YOUTUBE_AQUI',
-        'SEU_LINK_2_DO_YOUTUBE_AQUI',
-        'SEU_LINK_3_DO_YOUTUBE_AQUI',
+    list_musics = [
+        # This is a list and if you want to add 50 links, it's okay.
+        'YOUR_YOUTUBE_LINK_HERE_1',
+        'YOUR_YOUTUBE_LINK_HERE_2',
+        'YOUR_YOUTUBE_LINK_HERE_3',
     ]
 
-    for musica in lista_musicas:
+    for music in list_musics:
         try:
 
-            VIDEO_URL = musica
+            VIDEO_URL = music
 
             yt = YouTube(VIDEO_URL)
 
-            print('\n\nEncontrando melhor resolução...')
+            print('\n\nFinding the best resolution...')
             video_mp4 = yt.streams.get_highest_resolution()
 
-            print('Baixando vídeo do Youtube...')
+            print('Downloading Youtube Video...')
             video_mp4.download()
 
-            for diretorio, subpastas, arquivos in os.walk('./'):
-                for arquivo in arquivos:
-                    if '.mp4' in arquivo:
-                        mp4 = os.path.join(diretorio, arquivo)
+            for directory, subdirectory, archives in os.walk('./'):
+                for archive in archives:
+                    if '.mp4' in archive:
+                        mp4 = os.path.join(directory, archive)
                         mp3 = mp4.replace('.mp4', '.mp3')
-                        print('Convertendo MP4 para MP3...')
+                        print('Converting MP4 to MP3...')
                         video = VideoFileClip(mp4)
                         video.audio.write_audiofile(mp3)
                         os.remove(mp4)
-                        print('Música baixada.')
+                        print('Download success!')
         except:
-            print('Erro: Seu link precisa ser do Youtube')
+            print(
+                'Error: The links must be Youtube links, add a Youtube link to download.')
 
 
 mp3_downloader()
